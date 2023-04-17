@@ -17,7 +17,6 @@ data = [line.replace("\n", "") for line in data]
 data = [line.split("\t") for line in data]
 
 def pregunta_01():
-
     suma = 0
     for i in range(0, len(data)):
         suma = suma + int(data[i][1])
@@ -268,7 +267,7 @@ def pregunta_11():
                 dic_resultado[letra] += valor
             else:
                 dic_resultado[letra] = valor
-    resultado = sorted(dic_resultado.items(), key = lambda x: x[0])
+    resultado = dict(sorted(dic_resultado.items(), key = lambda x: x[0]))
     return resultado
 
 
@@ -281,5 +280,5 @@ def pregunta_12():
         for letra in letras:
             if letra.isdigit():
                 dic_resultado[i[0]] += int(letra)
-    resultado = sorted(dic_resultado.items(), key = lambda x: x[0])
+    resultado = dict(sorted(dic_resultado.items(), key = lambda x: x[0]))
     return resultado
